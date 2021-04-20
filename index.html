@@ -7,6 +7,7 @@
     </head>
 
     <body>
+
 <!--navigation-->
         <div class="navbar">
             <a class="active" href="#home">Home</a>
@@ -17,26 +18,36 @@
                 <i class="fa fa-caret-down"></i>
               </button>
               <div class="dropdown-content">
-                <a img src="gender_gap_final.svg" alt="gender_pay_gap">Pay Gap</a>
-                <a href="#">Gender Population</a>
-                <a href="#">Salary</a>
+                <a href="#jump_viz">Pay Gap</a>
+                <a href="#jump_bar">Salary</a>
+                <a href="#jump_circle">Gender Population</a>
               </div>
             </div>
         </div> 
+
 <!--gender pay gap viz-->
-        <div>
-            <center>
-            <img src="gender_gap_final.svg" alt="gender_pay_gap"
-            </center>
-        </div>
+<p style="margin-left: 2.5em;padding: 0 7em 2em"></p>
+    <p id="jump_viz"></p>
+        <center>  
+            <div class="viz">
+                <img src="gender_gap_final.svg" alt="gender_pay_gap">
+            </div>
+        </center>  
+
 <!--barchart-->
-        <center>
-        <div id="barchart"> </div>
-        </center>
+<p style="margin-left: 2.5em;padding: 0 7em 10em"></p>
+    <p id="jump_bar"></p>
+        <section>
+            <div id="barchart"> </div>
+        </section>
+
 <!--circle graph-->
-        <center>
-        <div id="circlegraph"></div>
-        </center>
+<p style="margin-left: 2.5em;padding: 0 7em 4em"></p>
+    <p id="jump_circle"></p>
+        <section>
+            <div id="circlegraph"></div>
+        </section>
+
 <!--scripts-->     
         <script src="./d3.js"></script>
         <script src="./main.js"></script>
@@ -49,5 +60,6 @@ const runtime = new Runtime();
 const main = runtime.module(define, Inspector.into(document.body));
 
         </script>
+<p style="margin-left: 2.5em;padding: 0 7em 4em"></p>
     </body>
 </html>
