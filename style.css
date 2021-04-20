@@ -1,0 +1,49 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;    
+    font-variant: small-caps;
+    background-image: radial-gradient(circle,rgb(40, 40, 40), rgb(28, 28, 28), rgb(0, 0, 0));
+    padding: 1em 3em;
+  }
+  .label{
+    fill:rgb(40, 40, 40);
+    content: "$";
+  }
+  .axis {
+    font-size: 16px;
+  }
+
+  h1 {
+    color: rgb(244, 235, 211);
+    font-size: large;
+}
+
+circle {
+    fill: rgb(101, 154, 198);
+    opacity: 8%;
+}
+text {
+    fill: rgb(244, 235, 211);
+    font-size: x-small;
+    text-anchor: end;
+    vertical-align: text-top;
+    line-height: 100%;
+    max-width: 100%;
+    margin-top: 0px;
+    opacity: 100 !important;
+}
+.arc {
+    fill: rgb(201, 183, 130) !important;
+    opacity: 100%;
+    padding-top: 100px !important;
+    text-orientation: upright;
+}
+.domain {
+  opacity: 0;
+}
+.tick {
+  stroke-opacity: 0;
+}
+.gender_pay_gap {
+  block-size: 100px;
+}
