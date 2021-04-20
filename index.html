@@ -7,33 +7,39 @@
     </head>
 
     <body>
-
-<p>
-    <p>
-        <p>
-
+<!--navigation-->
+        <div class="navbar">
+            <a class="active" href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <div class="dropdown">
+              <button class="dropbtn">Vizualizations
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#">Pay Gap</a>
+                <a href="#">Gender Population</a>
+                <a href="#">Salary</a>
+              </div>
+            </div>
+        </div> 
+<!--gender pay gap viz-->
         <div>
             <center>
-            <img src="gender_gap_final.svg" alt="gender_pay_ga"
+            <img src="gender_gap_final.svg" alt="gender_pay_gap"
             </center>
         </div>
-        </p>
-    </p>
-</p>
+<!--barchart-->
         <center>
         <div id="barchart"> </div>
         </center>
+<!--circle graph-->
+        <center>
+        <div id="circlegraph"></div>
+        </center>
+<!--scripts-->     
         <script src="./d3.js"></script>
         <script src="./main.js"></script>
-        <p>
-            <p>
-                <p>
-                </p>
-            </p>
-        </p>
-    <center>
-        <div id="circlegraph"></div>
-    </center>
         <script type="module">
 
 import define from "./circlegraph.js";
