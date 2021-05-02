@@ -1,14 +1,9 @@
 import define1 from "./circlegraph.js";
 export default function define(runtime, observer) {
   const main = runtime.module();
-  const fileAttachments = new Map([["diversity_2018.csv",new URL("./files/diversity_2018.csv",import.meta.url)],["original-plate-25.jpg",new URL("./files/2aea67b42c19f3db67f519577786b2bc291187dcdf01b0ed910562a2913654d2c701d71bd10f79684bfba4ec164ab994d13e868ed069e6f053aa756b4d6ff3cb",import.meta.url)]]);
+  const fileAttachments = new Map([["diversity_2018.csv",new URL("./files/diversity_2018.csv",import.meta.url)]]);
   main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
-  main.variable().define(["md"], function(md){return(
-md
-)});
-  main.variable().define(["FileAttachment"], function(FileAttachment){return(
-FileAttachment("diversity_2018.csv")
-)});
+;
   main.variable("data").define("data", ["FileAttachment","d3"], async function(FileAttachment,d3)
 {
   const text = await FileAttachment("diversity_2018.csv").text();
@@ -89,11 +84,6 @@ FileAttachment("diversity_2018.csv")
 }
 );
 
-
-  main.variable().define(["md"], function(md){return(
-md
-)});
-
   main.variable("color")
   .define("color", ["d3"], function(d3){return(
 d3.scaleOrdinal(d3.schemeCategory10)
@@ -102,14 +92,17 @@ d3.scaleOrdinal(d3.schemeCategory10)
   .define("ticks", ["scale","numTicks"], function(scale,numTicks){return(
 scale.ticks(numTicks).slice(0, -1)
 )});
+
   main.variable("keys")
   .define("keys", ["data"], function(data){return(
 data.map((d, i) => d.Company)
 )});
   main.variable("numArcs")
+ 
   .define("numArcs", ["keys"], function(keys){return(
 keys.length
 )});
+
   main.variable("arcWidth")
   .define("arcWidth", ["chartRadius","arcMinRadius","numArcs","arcPadding"], function(chartRadius,arcMinRadius,numArcs,arcPadding){return(
 (chartRadius - arcMinRadius - numArcs * arcPadding -10) / numArcs
@@ -131,7 +124,7 @@ d3.arc()
   main.variable("getInnerRadius")
   .define("getInnerRadius", ["arcMinRadius","numArcs","arcWidth","arcPadding"], function(arcMinRadius,numArcs,arcWidth,arcPadding){return(
 function getInnerRadius(index) {
-    return arcMinRadius + (numArcs - (index + 2)) * (arcWidth + arcPadding);
+    return arcMinRadius + (numArcs - (index)) * (arcWidth + arcPadding);
   }
 )});
   main.variable("getOuterRadius")
@@ -171,7 +164,7 @@ Math.PI
 )});
   main.variable("numTicks")
   .define("numTicks", function(){return(
-5
+100
 )});
   main.variable("chartRadius")
   .define("chartRadius", ["height"], function(height){return(

@@ -124,3 +124,9 @@ text {
 .viz {
 padding-left: 20%;
 }
+.ticks {
+  fill: green;
+}
+html {
+  scroll-behavior: smooth;
+}
