@@ -125,14 +125,9 @@ text {
 .viz {
 padding-left: 20%;
 }
-.ticks {
-  fill: green;
-}
-html {
-  scroll-behavior: smooth;
-}
+
 p {
-  color: rgb(244, 235, 211);
+  color: whitesmoke;
   display: block;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -164,4 +159,13 @@ h3 {
   color: #949494;
   font-variant: normal;
   font-weight: lighter;
+}
+section1 { 
+  display: block;
+  margin-top: 7em;
+  margin-bottom: 2em;
+  margin-left: 3em;
+  margin-right: 3em;
+  color: whitesmoke;
+  font-variant: normal;
 }

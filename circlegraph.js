@@ -174,7 +174,7 @@ height/2.1
   main.import("margin", child1);
   main.variable("height")
   .define("height", function(){return(
-500
+600
 )});
   main.variable("d3")
   .define("d3", ["require"], function(require){return(
