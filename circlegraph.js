@@ -10,7 +10,7 @@ export default function define(runtime, observer) {
 
   return d3.csvParse(text, ({Company, Female }) => ({
     Company: Company,
-    Female: +Female
+    Female: Female
   }));
 }
 );
