@@ -1,7 +1,7 @@
 import define1 from "./circlegraph.js";
 export default function define(runtime, observer) {
   const main = runtime.module();
-  const fileAttachments = new Map([["diversity_2018.csv",new URL("./files/diversity_2018.csv",import.meta.url)]]);
+  const fileAttachments = new Map([["diversity_2018.csv",new URL("./data/diversity_2018.csv",import.meta.url)]]);
   main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
 ;
   main.variable("data").define("data", ["FileAttachment","d3"], async function(FileAttachment,d3)

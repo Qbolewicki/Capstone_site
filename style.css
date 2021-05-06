@@ -5,10 +5,6 @@ body {
     background-image: radial-gradient(circle,rgb(40, 40, 40), rgb(28, 28, 28), rgb(0, 0, 0));
     padding: 1em 3em;
   }
-  .label{
-    fill:rgb(40, 40, 40);
-    content: "$";
-  }
   .axis {
     font-size: 16px;
   }
@@ -24,7 +20,7 @@ circle {
 }
 text {
     fill: rgb(244, 235, 211);
-    font-size: medium;
+    font-size: x-small;
     text-anchor: end;
     vertical-align: text-top;
     line-height: 100%;
@@ -36,9 +32,6 @@ text.label {
   fill: black;
   font-size: medium;
   text-anchor: middle;
-  line-height: 100%;
-  max-width: 100%;
-  margin-top: 0px;
 }
 .arc {
     fill: rgb(201, 183, 130) !important;

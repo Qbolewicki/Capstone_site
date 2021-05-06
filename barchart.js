@@ -69,10 +69,10 @@ d3.csv("./data/2018_Salary_US.csv", d3.autoType).then(data => {
       .attr("class", "label")
       // this allows us to position the text in the center of the bar
       .attr("y", d => yScale(d.Gender) + (yScale.bandwidth()+4))
-      .attr("x", 20, d => xScale(d.AverageSalaryUSD))
+      .attr("x", 40, d => xScale(d.AverageSalaryUSD))
       .text(d => d.AverageSalaryUSD)
-      .attr("dx", "220")
-      .attr("text-anchor", "middle");
+      .attr("dx", "200")
+      .attr("dy", "-30");
   
     svg
       .append("g")
