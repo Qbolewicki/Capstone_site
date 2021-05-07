@@ -45,9 +45,9 @@ d3.csv("./data/hours_worked.csv", d3.autoType).then(data => {
       .attr("width", d => width - margin.left - xScale(d.Hours))
       .attr("transform", `translate(200, ${height - margin.bottom, margin.top})`)
       .attr ("fill", function(d) {
-        if (d.Hours < 43.20) {
+        if (d.Hours > 43.20) {
         return "rgb(201, 183, 130)";
-      } else if (d.Hours > 43.10) {
+      } else if (d.Hours < 43.10) {
         return "rgb(101, 154, 198)";
       } return "black";
       });
