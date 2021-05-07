@@ -1,6 +1,6 @@
 // data load
 // reference for d3.autotype: https://github.com/d3/d3-dsv#autoType
-d3.csv("./data/2018_Salary_US.csv", d3.autoType).then(data => {
+d3.csv("./data/hours_worked.csv", d3.autoType).then(data => {
     console.log(data);
   
     /** CONSTANTS */
@@ -15,7 +15,7 @@ d3.csv("./data/2018_Salary_US.csv", d3.autoType).then(data => {
     
     const xScale = d3
       .scaleLinear()
-      .domain([0, d3.max(data, d => d.AverageSalaryUSD)])
+      .domain([0, d3.max(data, d => d.Hours)])
       .range([width - margin.left, margin.right]);
 
     const yScale = d3
@@ -39,15 +39,15 @@ d3.csv("./data/2018_Salary_US.csv", d3.autoType).then(data => {
       .selectAll("rect")
       .data(data)
       .join("rect")
-      .attr("x", d => xScale(d.AverageSalaryUSD))
+      .attr("x", d => xScale(d.Hours))
       .attr("y", d => yScale(d.Gender))
       .attr("height", yScale.bandwidth())
-      .attr("width", d => width - margin.left - xScale(d.AverageSalaryUSD))
+      .attr("width", d => width - margin.left - xScale(d.Hours))
       .attr("transform", `translate(200, ${height - margin.bottom, margin.top})`)
       .attr ("fill", function(d) {
-        if (d.AverageSalaryUSD < 109000) {
+        if (d.Hours < 43.20) {
         return "rgb(201, 183, 130)";
-      } else if (d.AverageSalaryUSD > 108000) {
+      } else if (d.Hours > 43.10) {
         return "rgb(101, 154, 198)";
       } return "black";
       });
@@ -57,7 +57,7 @@ d3.csv("./data/2018_Salary_US.csv", d3.autoType).then(data => {
       .transition()
       .duration(2000)
       .attr("x", 0, xScale)
-      .attr("width", d => width - margin.right - xScale(d.AverageSalaryUSD))
+      .attr("width", d => width - margin.right - xScale(d.Hours))
       .attr ("opacity", 1);
   
 
@@ -69,8 +69,8 @@ d3.csv("./data/2018_Salary_US.csv", d3.autoType).then(data => {
       .attr("class", "label")
       // this allows us to position the text in the center of the bar
       .attr("y", d => yScale(d.Gender) + (yScale.bandwidth()+4))
-      .attr("x", 40, d => xScale(d.AverageSalaryUSD))
-      .text(d => d.AverageSalaryUSD)
+      .attr("x", 40, d => xScale(d.Hours))
+      .text(d => d.Hours)
       .attr("dx", "200")
       .attr("dy", "-30");
   
