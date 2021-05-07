@@ -51,42 +51,67 @@ text.label {
 
  /* Navbar container */
  .navbar {
-  overflow: visible;
+  float:left;
+  width:100%;
   background-color: #333;
-  float: left;
-  text-align: center;
-  left: 50%;
-  transform: translate(50%);
+  border-bottom:4px solid #000;
   border-radius: 20px;
-  margin-bottom: 2em;
+  overflow:hidden;
+  position:relative;
 }
 
-/* Links inside the navbar */
-.navbar a {
-  float: left;
-  color: whitesmoke;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  border-radius: 20px;
-  
+.navbar ul {
+  clear:left;
+  float:left;
+  list-style:none;
+  margin:0;
+  padding:0;
+  position:relative;
+  left:50%;
+  text-align:center;
 }
+/* Links inside the navbar */
+.navbar ul li {
+  display:block;
+  float:left;
+  list-style:none;
+  margin:0;
+  padding:0;
+  position:relative;
+  right:50%;
+}
+
+.navbar ul li a{
+display:block;
+margin:0 0 0 1px;
+padding:3px 10px;
+background:#333;
+border-radius: 20px;
+color:whitesmoke;
+text-decoration:none;
+line-height:1.3em;
+}
+
+.navbar ul li a.active{
+  font-weight:bold;
+  }
 
 /* The dropdown container */
-.dropdown {
-  float: left;
-}
+
 
 /* Dropdown button */
-.dropbtn {
+button.dropbtn {
+  display: block;
+  font-family: 'Source Sans Pro', sans-serif;    
+  font-variant: small-caps;
   font-size: 16px;
   border: none;
   outline: none;
-  color: whitesmoke;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
+  background:#333;
+  fill:#333;
+  color:whitesmoke;
+  margin:0 0 0 1px;
+  padding:3px 10px;
   border-radius: 20px;
 }
 
@@ -104,7 +129,7 @@ text.label {
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
+.dropdown-content a{
   float: none;
   color: whitesmoke;
   padding: 12px 16px;
@@ -125,7 +150,8 @@ text.label {
 }
 .viz {
 padding-left: 20%;
-scale: 90%;
+width: 60%;
+height: 60%;
 }
 
 
