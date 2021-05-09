@@ -285,6 +285,7 @@ section1 {
 /* unvisited link */
 a:link {
   color: rgb(101, 154, 198);
+  text-decoration: none;
 }
 
 /* visited link */
